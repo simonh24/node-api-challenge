@@ -21,7 +21,7 @@ router.get("/:id", (req, res) => {
             if (!act) {
                 res.status(404).json({ error: "id does not exist" });
             } else {
-                res.status(200).json(act[0]);
+                res.status(200).json(act);
             }
         })
         .catch(err => {
