@@ -52,15 +52,18 @@ router.post("/:id", (req, res) => {
 });
 
 router.put("/:id", (req, res) => {
-    Actions.put(req.params.id, req.body)
+    Actions.update(req.params.id, req.body)
         .then(act => {
             if (act === null) {
                 res.status(404).json({ error: "id does not exist" });
             } else {
-                res.status.json(act);
+                res.status(200).json(act);
             }
         })
         .catch(err => {
+            console.log(req.params.id);
+            console.log(req.body);
+            console.log(err);
             res.status(500).json({ error: "something went wrong" });
         })
 });
