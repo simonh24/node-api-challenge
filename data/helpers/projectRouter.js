@@ -17,7 +17,7 @@ router.get("/", (req, res) => {
 router.get("/:id", (req, res) => {
     Projects.get(req.params.id)
         .then(projs => {
-            if (projs.length === 0) {
+            if (!projs) {
                 res.status(404).json({ error: "id does not exist" });
             } else {
                 res.status(200).json(projs[0]);
@@ -59,7 +59,7 @@ router.put("/:id", (req, res) => {
 router.delete("/:id", (req, res) => {
     Projects.get(req.params.id)
         .then(proj => {
-            if (proj.length === 0) {
+            if (!proj) {
                 res.status(404).json({ error: "id does not exist" });
             } else {
                 Projects.remove(req.params.id)
@@ -75,3 +75,5 @@ router.delete("/:id", (req, res) => {
             res.status(500).json({ error: "something went wrong" });
         })
 });
+
+module.exports = router;
