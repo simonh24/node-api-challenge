@@ -58,6 +58,10 @@ A status code of 200, 201, 202 means the request was a success.
 
 We make separate routers for each application and export it to be used in server.js.
 
+## Deployed Link
+
+https://node-api-sprint-chal.herokuapp.com/
+
 ## Minimum Viable Product
 
 - [ ] Configure an _npm script_ named _"server"_ that will execute your code using _nodemon_. Make _nodemon_ be a development time dependency only, it shouldn't be deployed to production.
